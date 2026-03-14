@@ -1,151 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bees & Bytes | Beekeeping & Cybersecurity</title>
+
+<!-- HEIC converter -->
+<script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
+
 <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #333;}
-	header {
-    /* Nature-inspired green gradient with glass effect */
-    background: linear-gradient(
-        rgba(72, 209, 204, 0.4),  /* turquoise-green */
-        rgba(144, 238, 144, 0.4)  /* light green */
-    );
-    backdrop-filter: blur(12px);           /* frosted glass blur */
-    -webkit-backdrop-filter: blur(12px);   /* Safari support */
-    border-radius: 0 0 20px 20px;          /* rounded bottom corners */
-    text-align: center;
-    padding: 80px 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* floating glass effect */
-    color: #0B3D2E;                        /* deep green text for readability */
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+padding:0;
+background:#fafafa;
+color:#333;
 }
 
-header h1 {
-    font-size: 3em;
-    margin: 0;
+header{
+background: linear-gradient(
+rgba(72,209,204,0.4),
+rgba(144,238,144,0.4)
+);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border-radius:0 0 20px 20px;
+text-align:center;
+padding:80px 20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+color:#0B3D2E;
 }
 
-header p {
-    font-size: 1.3em;
-    opacity: 0.85;
+header h1{
+font-size:3em;
+margin:0;
 }
-    nav { background: #222; text-align: center; }
-    nav a { color: #fff; padding: 14px 20px; text-decoration: none; display: inline-block; }
-    nav a:hover { background: #444; }
-    section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-    h2 { border-bottom: 3px solid #FFD54F; padding-bottom: 10px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 24px; }
-    .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
-    .card img { width: 100%; height: 220px; object-fit: cover; }
-    .card-content { padding: 15px; }
-    .btn { background: #222; color: #fff; text-decoration: none; padding: 10px 15px; border-radius: 5px; display: inline-block; margin-top: 8px;}
-    .btn:hover { background: #444; }
-    footer { text-align: center; padding: 25px; background: #222; color: #fff; margin-top: 40px; }
+
+header p{
+font-size:1.3em;
+opacity:0.85;
+}
+
+nav{
+background:#222;
+text-align:center;
+}
+
+nav a{
+color:#fff;
+padding:14px 20px;
+text-decoration:none;
+display:inline-block;
+}
+
+nav a:hover{
+background:#444;
+}
+
+section{
+max-width:1000px;
+margin:50px auto;
+padding:0 20px;
+}
+
+h2{
+border-bottom:3px solid #FFD54F;
+padding-bottom:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+}
+
+.card{
+background:#fff;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+.btn{
+background:#222;
+color:#fff;
+text-decoration:none;
+padding:10px 15px;
+border-radius:5px;
+display:inline-block;
+margin-top:8px;
+}
+
+.btn:hover{
+background:#444;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.media img,
+.media video{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:8px;
+cursor:pointer;
+transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.media img:hover,
+.media video:hover{
+transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#222;
+color:#fff;
+margin-top:40px;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<!-- Header -->
 <header>
-    <h1>Bees & Bytes</h1>
-    <p>Exploring the Buzz of Nature and the Bytes of Security</p>
+<h1>Bees & Bytes</h1>
+<p>Exploring the Buzz of Nature and the Bytes of Security</p>
 </header>
 
-<!-- Navigation -->
 <nav>
-    <a href="#about">About</a>
-    <a href="#beekeeping">Beekeeping</a>
-    <a href="#cybersecurity">Cybersecurity</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#beekeeping">Beekeeping</a>
+<a href="#cybersecurity">Cybersecurity</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- About -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m passionate about beekeeping and cybersecurity. I love caring for hives, producing honey, and mastering modern security tools to protect systems. This site combines both worlds.</p>
+<h2>About Me</h2>
+<p>Hello! I’m passionate about beekeeping and cybersecurity. I love caring for hives, producing honey, and mastering modern security tools to protect systems.</p>
 </section>
 
-<!-- Beekeeping Section -->
 <section id="beekeeping">
-    <h2>Beekeeping Insights</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="images/beehive.jpg" alt="Bee Hive">
-            <div class="card-content">
-                <h3>Hive Management Tips</h3>
-                <p>Discover how to manage hives, check colony health, and seasonal beekeeping routines.</p>
-                <a class="btn" href="#">Read More</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/honeycomb.jpg" alt="Honeycomb">
-            <div class="card-content">
-                <h3>Harvest & Honey</h3>
-                <p>Learn how to harvest, process, and store honey for best flavor and quality.</p>
-                <a class="btn" href="#">Read More</a>
-            </div>
-        </div>
-    </div>
+
+<h2>Beekeeping Gallery</h2>
+
+<div class="gallery">
+
+<div class="media" data-src="images/first-hive-with-bees.MOV"></div>
+
+<div class="media" data-src="images/new-hive.HEIC"></div>
+
+<div class="media" data-src="images/beehive.jpg"></div>
+
+</div>
+
+<h2>Beekeeping Insights</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="images/beehive.jpg">
+<div class="card-content">
+<h3>Hive Management Tips</h3>
+<p>Discover how to manage hives, check colony health, and seasonal routines.</p>
+<a class="btn" href="#">Read More</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/honeycomb.jpg">
+<div class="card-content">
+<h3>Harvest & Honey</h3>
+<p>Learn how to harvest, process, and store honey for best quality.</p>
+<a class="btn" href="#">Read More</a>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- Cybersecurity Section -->
 <section id="cybersecurity">
-    <h2>Cybersecurity Skills</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="images/cyber_security.jpg" alt="Cybersecurity">
-            <div class="card-content">
-                <h3>Network Defense</h3>
-                <p>Overview of firewalls, secure configurations, and monitoring for system protection.</p>
-                <a class="btn" href="#">Learn More</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/penetration_test.jpg" alt="Penetration Testing">
-            <div class="card-content">
-                <h3>Penetration Testing</h3>
-                <p>Ethical hacking tools and tips used to find and fix security vulnerabilities.</p>
-                <a class="btn" href="#">Learn More</a>
-            </div>
-        </div>
-    </div>
+
+<h2>Cybersecurity Skills</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="images/cyber_security.jpg">
+<div class="card-content">
+<h3>Network Defense</h3>
+<p>Overview of firewalls, secure configurations, and monitoring.</p>
+<a class="btn" href="#">Learn More</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/penetration_test.jpg">
+<div class="card-content">
+<h3>Penetration Testing</h3>
+<p>Ethical hacking tools used to find vulnerabilities.</p>
+<a class="btn" href="#">Learn More</a>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- Projects -->
 <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="images/beehive.jpg" alt="Beekeeping Project">
-            <div class="card-content">
-                <h3>Beekeeping Journal</h3>
-                <p>Photos and notes from my hive inspections and honey harvests.</p>
-                <a class="btn" href="#">View Gallery</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/cyber_security.jpg" alt="Cybersecurity Project">
-            <div class="card-content">
-                <h3>Cybersecurity Demos</h3>
-                <p>Demos of security setups and labs I have built.</p>
-                <a class="btn" href="#">View Projects</a>
-            </div>
-        </div>
-    </div>
+
+<h2>Featured Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="images/beehive.jpg">
+<div class="card-content">
+<h3>Beekeeping Journal</h3>
+<p>Photos and notes from hive inspections.</p>
+<a class="btn" href="#">View Gallery</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/cyber_security.jpg">
+<div class="card-content">
+<h3>Cybersecurity Labs</h3>
+<p>Security demos and test environments.</p>
+<a class="btn" href="#">View Projects</a>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- Contact -->
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourname@example.com | LinkedIn: <a href="#">Your LinkedIn</a> | GitHub: <a href="#">Your GitHub</a></p>
+
+<h2>Contact</h2>
+
+<p>
+Email: yourname@example.com<br>
+LinkedIn: <a href="#">Your LinkedIn</a><br>
+GitHub: <a href="#">Your GitHub</a>
+</p>
+
 </section>
 
-<!-- Footer -->
 <footer>
-    <p>&copy; 2026 Bees & Bytes. All rights reserved.</p>
+<p>© 2026 Bees & Bytes. All rights reserved.</p>
 </footer>
+
+<script>
+
+/* SMART MEDIA LOADER */
+
+document.querySelectorAll(".media").forEach(async container => {
+
+let src = container.dataset.src;
+let extension = src.split(".").pop().toLowerCase();
+
+/* VIDEO FILES */
+
+if(["mp4","mov","webm"].includes(extension)){
+
+let video=document.createElement("video");
+
+video.src=src;
+video.controls=true;
+
+container.appendChild(video);
+
+return;
+
+}
+
+/* HEIC FILES */
+
+if(extension==="heic"){
+
+try{
+
+let response=await fetch(src);
+let blob=await response.blob();
+
+let converted=await heic2any({
+blob:blob,
+toType:"image/jpeg"
+});
+
+let img=document.createElement("img");
+img.src=URL.createObjectURL(converted);
+
+container.appendChild(img);
+
+}catch(e){
+
+container.innerHTML="HEIC preview not supported";
+
+}
+
+return;
+
+}
+
+/* NORMAL IMAGES */
+
+let img=document.createElement("img");
+img.src=src;
+
+container.appendChild(img);
+
+});
+
+
+/* FULLSCREEN VIEWER */
+
+document.addEventListener("click",function(e){
+
+if(e.target.tagName==="IMG"){
+
+let viewer=document.createElement("div");
+
+viewer.style.position="fixed";
+viewer.style.top="0";
+viewer.style.left="0";
+viewer.style.width="100%";
+viewer.style.height="100%";
+viewer.style.background="rgba(0,0,0,0.9)";
+viewer.style.display="flex";
+viewer.style.alignItems="center";
+viewer.style.justifyContent="center";
+
+viewer.innerHTML=`<img src="${e.target.src}" style="max-width:90%;max-height:90%">`;
+
+viewer.onclick=()=>viewer.remove();
+
+document.body.appendChild(viewer);
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
